@@ -1,4 +1,4 @@
-
+import core
 import basedec 
 
 def cached(size):
