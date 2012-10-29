@@ -4,7 +4,7 @@ import webob
 import webob.dec
 import webob.exc
 
-import easydict
+import j0057nl.core.easydict
 
 sessions = {}
 
@@ -25,7 +25,7 @@ def start_session(request, response):
     global sessions
     # create session
     sessionid = str(uuid.uuid4())
-    sessions[sessionid] = easydict.EasyDict()
+    sessions[sessionid] = j0057nl.core.easydict.EasyDict()
     # add to request
     request.session = sessions[sessionid]
     # set cookie in response

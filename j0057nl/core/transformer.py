@@ -2,9 +2,9 @@ import json
 
 import webob
 
-import basedec 
+import j0057nl.core.basedec 
 
-class transformer(basedec.BaseDecorator):
+class transformer(j0057nl.core.basedec.BaseDecorator):
 	def __init__(self, func):
 		self.func = func
 		self.json_decoder = json.JSONDecoder()

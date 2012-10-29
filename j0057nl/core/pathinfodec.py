@@ -1,7 +1,7 @@
-import basedec
+import j0057nl.core.basedec
 
 def pathinfo(pattern):
-    class pathinfo(basedec.BaseDecorator):
+    class pathinfo(j0057nl.core.basedec.BaseDecorator):
         def __init__(self, func):
             self.func = func
             self.pattern = pattern

@@ -8,9 +8,9 @@ import pytz
 
 import webob
 
-import resource 
+import j0057nl.core.resource 
 
-class MergedFile(resource.Resource):
+class MergedFile(j0057nl.core.resource.Resource):
 	def __init__(self, path, content_type):
 		self.content_type = content_type
 		self.path = path

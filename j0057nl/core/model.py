@@ -4,7 +4,7 @@ import itertools
 import MySQLdb
 import MySQLdb.cursors
 
-import core.easydict
+import j0057nl.core.easydict
 
 CHATTY = 0
 
@@ -100,7 +100,7 @@ class MySQLProvider(Provider):
         c.execute(sql, args)
         result = c.fetchall()
         c.close()
-        return map(core.easydict.EasyDict, result)
+        return map(j0057nl.core.easydict.EasyDict, result)
 
     def Execute(self, sql, *args):
         if CHATTY:

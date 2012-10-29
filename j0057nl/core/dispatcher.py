@@ -3,7 +3,7 @@ import re
 import webob.dec
 import webob.exc
 
-import core.resource
+import j0057nl.core.resource
 
 class Dispatcher(object):
 	@webob.dec.wsgify
@@ -20,7 +20,7 @@ class Dispatcher(object):
 			match = re.match(pattern, segment)
 			if match:
 				request.path_info_pop()
-				if isinstance(obj, core.Resource) and request.path_info:
+				if isinstance(obj, j0057nl.core.resource.Resource) and request.path_info:
 					break
 				return obj(request, *(args + match.groups()))
 
