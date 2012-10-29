@@ -3,8 +3,8 @@ import webob.exc
 
 import StringIO
 
-import j0057nl.core.xml
-import j0057nl.core.basedec
+from . import xml
+from . import basedec
 
 class xslt(basedec.BaseDecorator):
     def __init__(self, func):

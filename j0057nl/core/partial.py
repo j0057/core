@@ -1,14 +1,14 @@
 import webob
 import webob.exc
 
-import j0057nl.core.basedec
+from . import basedec
 
 def debug(request, message):
     if not message.endswith('\n'):
         message += '\n'
     request.environ['wsgi.errors'].write(message)
 
-class partial(j0057nl.core.basedec.BaseDecorator):
+class partial(basedec.BaseDecorator):
     def __init__(self, func):
         self.func = func
 

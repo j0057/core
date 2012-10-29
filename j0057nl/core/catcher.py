@@ -4,11 +4,13 @@ import webob
 import webob.dec
 import webob.exc
 
-try:
-    from MySQLdb import MySQLError
-except ImportError:
-    class MySQLError(Exception):
-        pass
+#try:
+#    from MySQLdb import MySQLError
+#except ImportError:
+#    class MySQLError(Exception):
+#        pass
+
+from MySQLdb import MySQLError
 
 def catcher(application):
 	@webob.dec.wsgify

@@ -7,7 +7,7 @@ import time
 import pytz
 import webob
 
-import j0057nl.core.resource 
+from . import resource
 
 def serve_stream(request, content_type, stream, last_mod=None, etag=None):
     if last_mod:
@@ -55,7 +55,7 @@ def serve_file(request, content_type, filename, cache_last_mod=True, cache_etag=
 	with open(filename, 'rb') as f:
 		return webob.Response(content_type=content_type, body=f.read())
 
-class FileServer(j0057nl.core.resource.Resource):
+class FileServer(resource.Resource):
     def __init__(self, path, content_type):
         self.content_type = content_type
         self.path = path

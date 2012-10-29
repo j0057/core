@@ -1,10 +1,10 @@
 import webob
 import webob.exc
 
-import j0057nl.core.basedec
+from . import basedec
 
 def authenticated(*rights):
-    class authenticated(j0057nl.core.basedec.BaseDecorator):
+    class authenticated(basedec.BaseDecorator):
         def __init__(self, func):
             self.func = func
         def __call__(self, request, *args):
