@@ -50,8 +50,5 @@ def run_server(app):
     httpd = wsgiref.simple_server.make_server('', 8000, app)
     httpd.serve_forever()
 
-def debug(request, message):
-    if not message.endswith('\n'):
-        message += '\n'
-    request.environ['wsgi.errors'].write(message)
+from debug import debug
 

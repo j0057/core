@@ -1,6 +1,6 @@
 
 from . import basedec
-from .. import core
+from .debug import debug
 
 def cached(size):
     def closure(SIZE, CACHE, KEYS):
