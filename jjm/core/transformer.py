@@ -3,6 +3,7 @@ import json
 import webob
 
 import basedec 
+import easydict
 
 class transformer(basedec.BaseDecorator):
 	def __init__(self, func):
@@ -15,7 +16,7 @@ class transformer(basedec.BaseDecorator):
 			for (i, item) in enumerate(obj):
 				obj[i] = self.recursive_easydict(item)
 		elif isinstance(obj, dict):
-			obj = core.EasyDict(obj)
+			obj = easydict.EasyDict(obj)
 			for (key, value) in obj.iteritems():
 				obj[key] = self.recursive_easydict(value)
 		return obj
