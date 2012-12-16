@@ -27,7 +27,10 @@ from cached import cached
 import report
 
 import inifile
-ini = inifile.INIFile('/home/joost/www/site.ini')
+try:
+    ini = inifile.INIFile('/home/joost/www/site.ini')
+except:
+    ini = None
 del inifile
 
 def run_server(app):
