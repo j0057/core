@@ -7,7 +7,7 @@ import MySQLdb.cursors
 from . import easydict
 from jjm import core
 
-CHATTY = 0
+CHATTY = 1
 
 def index(idcol):
     def indexed_dec(f):

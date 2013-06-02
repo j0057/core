@@ -3,6 +3,7 @@ import webob.exc
 
 import StringIO
 
+
 from . import xml
 from . import basedec
 
@@ -32,10 +33,18 @@ class xslt(basedec.BaseDecorator):
 
     def apply_stylesheet(self, request, response):
         import lxml.etree
+        filename = request.environ['DOCUMENT_ROOT'] + '/web/' + request.GET['xslt']
+        print 'xslt: serializing XML'
         self.serialize_xml(response)
-        xsl = lxml.etree.XSLT(lxml.etree.parse(request.environ['DOCUMENT_ROOT'] + '/web/' + request.GET['xslt']))
+        print 'xslt: reading XSL', filename
+        xsl_xml = lxml.etree.parse(filename)
+        print 'xslt: compiling XSL'
+        xsl = lxml.etree.XSLT(xsl_xml)
+        print 'xslt: reading XML'
         xml = lxml.etree.parse(StringIO.StringIO(response.body))
+        print 'xslt: applying XSLT'
         response.body = str(xsl(xml))
+        print 'xslt: done'
 
     def serialize_xml(self, response):
         response.body = xml.serialize_ws(response.body).encode('utf8')
