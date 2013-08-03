@@ -5,7 +5,8 @@ import MySQLdb
 import MySQLdb.cursors
 
 from . import easydict
-from jjm import core
+
+import core
 
 CHATTY = 1
 
