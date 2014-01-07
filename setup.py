@@ -6,13 +6,13 @@ static_dirs = []
 
 import sys
 if len(sys.argv) == 2 and sys.argv[1] == '--install-requires':
-    print '\n'.join(package_names + repo_names)
+    sys.stdout.write('\n'.join(package_names + repo_names))
 elif len(sys.argv) == 2 and sys.argv[1] == '--repo-names':
-    print '\n'.join(repo_names)
+    sys.stdout.write('\n'.join(repo_names))
 elif len(sys.argv) == 2 and sys.argv[1] == '--package-names':
-    print '\n'.join(package_names)
+    sys.stdout.write('\n'.join(package_names))
 elif len(sys.argv) == 2 and sys.argv[1] == '--static-dirs':
-    print '\n'.join(static_dirs)
+    sys.stdout.write('\n'.join(static_dirs))
 else:
     import os
     import setuptools

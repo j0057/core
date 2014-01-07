@@ -4,4 +4,4 @@ MANIFEST
 MANIFEST.in
 *.swp
 *.egg-info
-
+requirements.txt

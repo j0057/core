@@ -1,0 +1,3 @@
+MAIN =
+
+include build/Makefile
