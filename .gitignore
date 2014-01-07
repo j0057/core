@@ -1,5 +1,7 @@
 *.pyc
-dist
-env
+env27
 MANIFEST
+MANIFEST.in
+*.swp
+*.egg-info
 
