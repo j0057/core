@@ -1,7 +1,7 @@
 #!/usr/bin/env python2.7
 
 repo_names = []
-package_names = ['mysql-python', 'lxml', 'pytz']
+package_names = ['mysql-python', 'lxml', 'pytz', 'webob']
 static_dirs = []
 
 import sys
