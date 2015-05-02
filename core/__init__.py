@@ -26,12 +26,14 @@ from cached import cached
 
 import report
 
+import os
 import inifile
 try:
-    ini = inifile.INIFile('/home/joost/www/site.ini')
+    ini = inifile.INIFile(os.environ['CORE_CONFIG'])
 except:
     ini = None
 del inifile
+del os
 
 def run_server(app):
     def fix_wsgiref(app):
